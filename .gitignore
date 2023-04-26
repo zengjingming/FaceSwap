@@ -1,0 +1,11 @@
+*.h5
+*.mp4
+*.pyc
+.idea
+/vggface2_test
+/vggface2_train
+/tmp_frames
+/shard_test
+/shard_train
+/model_zoo
+/exports

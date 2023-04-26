@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH -J crop_test_images
+#SBATCH --mail-type=ALL
+#SBATCH -p gpu_24h
+#SBATCH --gres=gpu:1
+#SBATCH --mail-user=1155178711@link.cuhk.edu.hk
+#SBATCH --output=output.out
+#SBATCH --error=error.err
+#SBATCH --qos=gpu
+#SBATCH --account hpc_2gpu
+
+python crop_align.py --data_dir "vggface2_train/train/" --target_dir "crop_train/"

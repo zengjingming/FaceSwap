@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH -J crop_test_images
+#SBATCH --mail-type=ALL
+#SBATCH -p gpu_24h
+#SBATCH --gres=gpu:1
+#SBATCH --mail-user=1155178711@link.cuhk.edu.hk
+#SBATCH --output=output.out
+#SBATCH --error=error.err
+#SBATCH --qos=gpu
+#SBATCH --account hpc_2gpu
+
+python train/train.py --data_dir "crop_train/vggface2_train_00000-of-00000.records" --eval_dir "crop_test/vggface2_train_00000-of-00003.records" --num_epochs 2000 --log_name "facedancer2000"
