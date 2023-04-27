@@ -1,5 +1,5 @@
 *.h5
-*.mp4
+
 *.pyc
 .idea
 /vggface2_test
