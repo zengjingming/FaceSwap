@@ -1,9 +1,15 @@
 <div align="center">
 
 # Project2:FaceSwap
-<video src="./original_video.mp4" alt="demo_vid_0" style="zoom:50%;" />
 
-<video src="./swap_video.mp4" alt="demo_vid_0" style="zoom:50%;" />
+
+
+https://user-images.githubusercontent.com/125641308/234752288-bff92dc7-c647-4ed8-be84-4927dccfd479.mp4
+
+
+
+https://user-images.githubusercontent.com/125641308/234752240-1c1cad63-124d-4de8-a02a-cd1d5a5a90bd.mp4
+
 
 
 ## Abstract
