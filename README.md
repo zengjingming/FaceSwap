@@ -1,9 +1,11 @@
 <div align="center">
-
 # Project2:FaceSwap
+
 <img src="./original_video.gif" alt="demo_vid_0" style="zoom:50%;" />
 
 <img src="./swap_video.gif" alt="demo_vid_0" style="zoom:50%;" />
+
+
 
 
 ## Abstract
