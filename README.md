@@ -1,25 +1,9 @@
 <div align="center">
 
-# <b>FaceDancer: Pose- and Occlusion-Aware High Fidelity Face Swapping</b>
-![demo_vid_0](assets/133_to_4.gif)
+# Project2:FaceSwap
+<img src="original_video.mp4" alt="demo_vid_0" style="zoom:50%;" />
 
-[![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2210.10473) [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  [![GitHub Stars](https://img.shields.io/github/stars/felixrosberg/FaceDancer?affiliations=OWNER&color=green&style=social)](https://github.com/felixrosberg/FaceDancer) ![visitors](https://visitor-badge.laobi.icu/badge?page_id=felixrosberg/FaceDancer) [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/felixrosberg/face-swap) <a href="https://colab.research.google.com/github/felixrosberg/FaceDancer/blob/main/FaceDancer_colab_demo.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="google colab logo"></a>
-
-[[**WACV 2023**](https://openaccess.thecvf.com/content/WACV2023/html/Rosberg_FaceDancer_Pose-_and_Occlusion-Aware_High_Fidelity_Face_Swapping_WACV_2023_paper.html)] [[**Video Results**](https://drive.google.com/drive/folders/1hHjK0W-Oo1HD6OZb97IdSifPs4_c6NNo?usp=sharing)]
-
-</div>
-
-
-#### 🚩 Updates:
-#### **06.01.2023:**
-
-
-- Dockerfile and API examples provided by [AliYqb](https://github.com/AliYqb).
-#### **03.01.2023:**
-
-
-- Minor code improvements. Fixed ```No module named 'retinaface.models'``` error (thanks to [kambiannan](https://github.com/kambiannan)).
-- Added ability to use a GIF as an input file and export the final result to GIF or WEBP. For more information, check the updated [installation guide](https://github.com/felixrosberg/FaceDancer#installation).
+<img src="swap_video.mp4" alt="demo_vid_0" style="zoom:50%;" />
 
 
 ## Abstract
@@ -42,7 +26,7 @@
 > transfer, while having significantly better pose preservation
 > than most of the previous methods.
 
-![overview](assets/facedancer_ov.png)
+![overview](assets/a.png)
 
 For a quick play around, you can check out a version of FaceDancer hosted on [Hugging Face](https://huggingface.co/spaces/felixrosberg/face-swap). The Space allow you to face swap images, but also try some other functionality I am currently researching, which I plan to publish soon. For example, reconstruction attacks and adversarial defense against the reconstruction attacks.
 
@@ -220,41 +204,3 @@ python train/train.py --data_dir C:/path/to/tfrecords/train/dataset_train_*-of-*
 
 You can monitor the training with tensorboard. The `train.py` script will automatically log losses and images into logs/runs/facdancer unless you specify a different log directory and/or log name (facedancer is the default log name). Checkpoints will automatically be saved into ./checkpoints directory unless you specify a different directory. The checkpointing saves the model structures to *.json* and the weights to *.h5* files. If you want the complete model in a single *.h5* file you can rerun `train.py` with **--load XX** and **--export True**. This will save the complete model as a *.h5* file in **exports/facedancer**. XX is the checkpoint weight identifier, which can be found if you go to your checkpoints directory and for example, look up gen/gen_XX.h5.
 
-
-## PyTorch Implementation
-Currently I am working on a PyTorch version of FaceDancer. The training and network code is kind of done. Currently the behaviour compare to TensorFlow is drastically different. Some interesting notes is that the mapping network does not allow for the FaceDancer to learn its task. In current state it provides decent results with the mapping network ommited. I will post the PyTorch version as soon as these issues is diagnosed and resolved.
-
-
-## Docker 
-  * build:
-  ```docker build --rm -t faceswap .```
-  
-  * run:
-  ```docker run --gpus all --rm -it -p 8973:8000 -v $(pwd)/results:/workspace/results faceswap```
-  
-  
-## License
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
-
-**FaceDancer** is licensed under [Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-
-
-## Citation
-If you use this repository in your work, please cite us:
-```
-@InProceedings{Rosberg_2023_WACV,
-    author    = {Rosberg, Felix and Aksoy, Eren Erdal and Alonso-Fernandez, Fernando and Englund, Cristofer},
-    title     = {FaceDancer: Pose- and Occlusion-Aware High Fidelity Face Swapping},
-    booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
-    month     = {January},
-    year      = {2023},
-    pages     = {3454-3463}
-}
-```
-
-### TODO:
-- [ ] Add complete code for calculating IFSR.
-- [ ] Add code for all evaluation steps.
-- [x] Provide download links to pretrained models.
-- [x] Image swap script.
-- [ ] Debugging?
