@@ -93,8 +93,8 @@ def swap_face(source,target,result_img_path="tmp.png",video=False,last_image=1):
 
         total_img = np.clip(total_img * 255, 0, 255).astype('uint8')
         total_img=cv2.cvtColor(total_img, cv2.COLOR_BGR2RGB)
-        if video==True:
-             total_img=cv2.addWeighted(total_img,0.5,last_image,0.5,0)
+        #if video==True:
+        #     total_img=cv2.addWeighted(total_img,0.5,last_image,0.5,0)
         cv2.imwrite(result_img_path, total_img)
         return total_img
 
